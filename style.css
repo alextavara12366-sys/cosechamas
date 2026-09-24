@@ -1,0 +1,2466 @@
+style.css
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --green-dark: #123c25;
+    --green: #1b7f3a;
+    --green-light: #2eaa55;
+    --green-pale: #eaf7ed;
+
+    --lime: #a7d957;
+
+    --orange: #ef9b32;
+    --orange-light: #fff1dc;
+
+    --blue: #3c8dc5;
+
+    --cream: #f8faf4;
+
+    --dark: #102019;
+    --dark-2: #182d22;
+
+    --white: #ffffff;
+
+    --text: #1d2a22;
+    --gray: #68746d;
+    --light-gray: #e5eae6;
+
+    --shadow:
+        0 15px 45px rgba(17, 56, 34, 0.10);
+
+    --radius: 18px;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    background: var(--cream);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+
+    color: inherit;
+
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font-family: inherit;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    backdrop-filter:
+        blur(14px);
+
+    border-bottom:
+        1px solid rgba(18,60,37,0.08);
+
+}
+
+
+.navbar {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding:
+        14px 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.logo {
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    color: var(--green-dark);
+
+    white-space: nowrap;
+
+}
+
+
+.logo-leaf {
+
+    font-size: 27px;
+
+}
+
+
+.logo-highlight {
+
+    color: var(--green);
+
+}
+
+
+.nav-menu {
+
+    margin-left: auto;
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 28px;
+
+}
+
+
+.nav-menu a {
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    color: #415047;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-menu a:hover {
+
+    color: var(--green);
+
+}
+
+
+.header-whatsapp {
+
+    text-decoration: none;
+
+    background: #25D366;
+
+    color: white;
+
+    padding:
+        11px 17px;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+
+}
+
+
+.header-whatsapp:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37,211,102,0.25);
+
+}
+
+
+.menu-toggle {
+
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    font-size: 27px;
+
+    color: var(--green-dark);
+
+    cursor: pointer;
+
+}
+
+
+.theme-button {
+
+    border: none;
+
+    background: var(--green-pale);
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    padding:
+        145px 24px 90px;
+
+    min-height: 720px;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(167,217,87,0.20),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f4f9ee,
+            #ffffff
+        );
+
+}
+
+
+.hero-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr 0.95fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding:
+        8px 14px;
+
+    border-radius: 50px;
+
+    background: var(--green-pale);
+
+    color: var(--green-dark);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero h1 {
+
+    font-family: "Nunito", sans-serif;
+
+    font-size:
+        clamp(42px, 5vw, 67px);
+
+    line-height: 1.02;
+
+    color: var(--green-dark);
+
+    letter-spacing: -2px;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--green);
+
+}
+
+
+.hero-description {
+
+    margin-top: 25px;
+
+    max-width: 650px;
+
+    font-size: 17px;
+
+    color: var(--gray);
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    padding:
+        14px 22px;
+
+    border-radius: 10px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.btn-whatsapp {
+
+    background: #25D366;
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(37,211,102,0.20);
+
+}
+
+
+.btn-whatsapp:hover {
+
+    box-shadow:
+        0 14px 30px rgba(37,211,102,0.30);
+
+}
+
+
+.btn-primary {
+
+    background: var(--green);
+
+    color: white;
+
+}
+
+
+.btn-outline {
+
+    border:
+        1px solid #cbd8ce;
+
+    color: var(--green-dark);
+
+    background: white;
+
+}
+
+
+.btn-large {
+
+    padding:
+        17px 28px;
+
+    font-size: 16px;
+
+}
+
+
+.hero-trust {
+
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 45px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.hero-trust div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.hero-trust strong {
+
+    color: var(--green);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 24px;
+
+}
+
+
+.hero-trust span {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.hero-visual {
+
+    position: relative;
+
+    min-height: 520px;
+
+}
+
+
+.hero-image {
+
+    height: 500px;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background:
+
+        linear-gradient(
+            160deg,
+            rgba(28,102,52,0.15),
+            rgba(18,60,37,0.85)
+        ),
+
+        linear-gradient(
+            135deg,
+            #9bc66b,
+            #3c713b 45%,
+            #1a4d2c
+        );
+
+    box-shadow:
+        0 30px 60px rgba(18,60,37,0.18);
+
+}
+
+
+.hero-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        repeating-linear-gradient(
+            165deg,
+            transparent 0,
+            transparent 28px,
+            rgba(255,255,255,0.08) 29px,
+            transparent 31px
+        );
+
+}
+
+
+.image-content {
+
+    position: absolute;
+
+    bottom: 50px;
+
+    left: 40px;
+
+    right: 40px;
+
+    color: white;
+
+}
+
+
+.farmer-emoji {
+
+    font-size: 100px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.field-lines {
+
+    font-size: 35px;
+
+    letter-spacing: 8px;
+
+}
+
+
+.image-content p {
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    max-width: 400px;
+
+    line-height: 1.1;
+
+    margin-top: 20px;
+
+}
+
+
+.profit-card {
+
+    position: absolute;
+
+    top: 55px;
+
+    right: -25px;
+
+    background: white;
+
+    padding:
+        15px 20px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.profit-icon {
+
+    background: var(--green-pale);
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    font-size: 22px;
+
+}
+
+
+.profit-card strong {
+
+    display: block;
+
+    color: var(--green);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 25px;
+
+}
+
+
+.profit-card span {
+
+    display: block;
+
+    font-size: 11px;
+
+    color: var(--gray);
+
+}
+
+
+.tech-card {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    right: -30px;
+
+    padding:
+        13px 18px;
+
+    border-radius: 12px;
+
+    background: var(--green-dark);
+
+    color: white;
+
+    font-weight: 700;
+
+    font-size: 12px;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+/* =====================================================
+   IMPACT
+===================================================== */
+
+.impact {
+
+    background: var(--green-dark);
+
+    color: white;
+
+}
+
+
+.impact-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding:
+        28px 24px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 30px;
+
+}
+
+
+.impact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.impact-icon {
+
+    font-size: 30px;
+
+}
+
+
+.impact-item strong {
+
+    display: block;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 22px;
+
+    color: var(--lime);
+
+}
+
+
+.impact-item span:not(.impact-icon) {
+
+    display: block;
+
+    color: #c7d5cb;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+.section {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding:
+        105px 24px;
+
+}
+
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.section-heading.centered {
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    text-align: center;
+
+}
+
+
+.eyebrow {
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.section-heading h2 {
+
+    font-family: "Nunito", sans-serif;
+
+    color: var(--green-dark);
+
+    font-size:
+        clamp(32px,4vw,48px);
+
+    line-height: 1.1;
+
+    margin-top: 10px;
+
+}
+
+
+.section-heading h2 span {
+
+    color: var(--green);
+
+}
+
+
+.section-heading p {
+
+    color: var(--gray);
+
+    margin-top: 15px;
+
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.benefits {
+
+    background: white;
+
+    max-width: none;
+
+    padding-left:
+        max(24px, calc((100% - 1152px)/2));
+
+    padding-right:
+        max(24px, calc((100% - 1152px)/2));
+
+}
+
+
+.benefits-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+
+}
+
+
+.benefit-card {
+
+    position: relative;
+
+    padding: 32px;
+
+    border:
+        1px solid var(--light-gray);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    background: var(--cream);
+
+    transition: 0.3s;
+
+}
+
+
+.benefit-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.benefit-card.featured {
+
+    background: var(--green-dark);
+
+    color: white;
+
+}
+
+
+.benefit-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.benefit-icon.green {
+
+    background: var(--green-pale);
+
+}
+
+
+.benefit-icon.orange {
+
+    background: var(--orange-light);
+
+}
+
+
+.benefit-icon.blue {
+
+    background: #e6f3fb;
+
+}
+
+
+.benefit-card h3 {
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.benefit-card p {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+}
+
+
+.benefit-card.featured p {
+
+    color: #c7d5cb;
+
+}
+
+
+.benefit-number {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 15px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 50px;
+
+    font-weight: 900;
+
+    color: rgba(27,127,58,0.08);
+
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services {
+
+    background: var(--cream);
+
+}
+
+
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+
+}
+
+
+.service-card {
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 32px;
+
+    border:
+        1px solid #e4ebe5;
+
+    box-shadow:
+        0 5px 25px rgba(20,60,35,0.04);
+
+    transition: 0.3s;
+
+}
+
+
+.service-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.service-card.service-highlight {
+
+    border:
+        2px solid var(--green);
+
+}
+
+
+.service-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.service-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+
+    background: var(--green-pale);
+
+}
+
+
+.service-top > span {
+
+    color: #c4cec7;
+
+    font-weight: 900;
+
+}
+
+
+.service-card h3 {
+
+    margin-top: 25px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 22px;
+
+    line-height: 1.15;
+
+}
+
+
+.service-subtitle {
+
+    color: var(--green);
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    margin:
+        7px 0 22px;
+
+}
+
+
+.service-card ul {
+
+    list-style: none;
+
+}
+
+
+.service-card li {
+
+    font-size: 14px;
+
+    color: var(--gray);
+
+    margin-bottom: 14px;
+
+}
+
+
+.service-detail {
+
+    border: none;
+
+    background: none;
+
+    color: var(--green);
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    margin-top: 8px;
+
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.how-it-works {
+
+    background: white;
+
+}
+
+
+.steps {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 40px;
+
+}
+
+
+.step {
+
+    position: relative;
+
+}
+
+
+.step-number {
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    margin-bottom: 25px;
+
+}
+
+
+.step-line {
+
+    position: absolute;
+
+    top: 30px;
+
+    left: 70px;
+
+    right: -35px;
+
+    border-top:
+        2px dashed #cbdacf;
+
+}
+
+
+.step:last-child .step-line {
+
+    display: none;
+
+}
+
+
+.step-content > span {
+
+    color: var(--green);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+.step-content h3 {
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 23px;
+
+    margin:
+        8px 0 10px;
+
+}
+
+
+.step-content p {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+}
+
+
+.steps-cta {
+
+    text-align: center;
+
+    margin-top: 55px;
+
+}
+
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+.testimonials {
+
+    background:
+        #edf6eb;
+
+    max-width: none;
+
+    padding-left:
+        max(24px, calc((100% - 1152px)/2));
+
+    padding-right:
+        max(24px, calc((100% - 1152px)/2));
+
+}
+
+
+.testimonials-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 25px;
+
+}
+
+
+.testimonial-card {
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 8px 30px rgba(20,60,35,0.05);
+
+}
+
+
+.quote {
+
+    font-family: Georgia, serif;
+
+    font-size: 70px;
+
+    color: var(--green);
+
+    height: 55px;
+
+}
+
+
+.testimonial-card > p {
+
+    color: #526059;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+.testimonial-author {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+}
+
+
+.author-avatar {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 900;
+
+}
+
+
+.author-avatar.purple {
+
+    background: #7355a8;
+
+}
+
+
+.testimonial-author strong {
+
+    display: block;
+
+}
+
+
+.testimonial-author span {
+
+    display: block;
+
+    color: var(--gray);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.final-cta {
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(167,217,87,0.18),
+            transparent 25%
+        ),
+
+        var(--green-dark);
+
+    color: white;
+
+    text-align: center;
+
+    padding:
+        100px 24px;
+
+}
+
+
+.final-cta-content {
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+
+.cta-decoration {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.final-cta .eyebrow {
+
+    color: var(--lime);
+
+}
+
+
+.final-cta h2 {
+
+    font-family: "Nunito", sans-serif;
+
+    font-size:
+        clamp(35px,5vw,55px);
+
+    line-height: 1.08;
+
+    margin:
+        12px 0 18px;
+
+}
+
+
+.final-cta p {
+
+    color: #c8d7cc;
+
+    max-width: 650px;
+
+    margin:
+        auto auto 30px;
+
+}
+
+
+/* =====================================================
+   CONTACT FORM
+===================================================== */
+
+.contact-form-section {
+
+    background: white;
+
+    padding:
+        90px 24px;
+
+}
+
+
+.contact-form-container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 70px;
+
+    align-items: start;
+
+}
+
+
+.contact-form-container h2 {
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 42px;
+
+    color: var(--green-dark);
+
+    line-height: 1.1;
+
+    margin-top: 10px;
+
+}
+
+
+.contact-form-container h2 span {
+
+    color: var(--green);
+
+}
+
+
+.contact-form-container > div > p {
+
+    color: var(--gray);
+
+    margin-top: 15px;
+
+}
+
+
+.contact-form {
+
+    background: var(--cream);
+
+    padding: 30px;
+
+    border-radius: var(--radius);
+
+}
+
+
+.form-group {
+
+    margin-bottom: 18px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+
+    width: 100%;
+
+    border:
+        1px solid #d8e2da;
+
+    background: white;
+
+    border-radius: 9px;
+
+    padding: 13px;
+
+    outline: none;
+
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 0 3px rgba(27,127,58,0.08);
+
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    background: #0d2116;
+
+    color: white;
+
+    padding:
+        70px 24px 20px;
+
+}
+
+
+.footer-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.6fr 1fr 1.3fr 1fr;
+
+    gap: 50px;
+
+}
+
+
+.footer .logo {
+
+    color: white;
+
+}
+
+
+.footer-brand > p {
+
+    color: #9eaea3;
+
+    margin-top: 8px;
+
+}
+
+
+.footer-description {
+
+    max-width: 300px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+
+}
+
+
+.footer-column h4 {
+
+    color: var(--lime);
+
+    margin-bottom: 5px;
+
+}
+
+
+.footer-column a,
+.footer-column span {
+
+    text-decoration: none;
+
+    color: #b7c4bb;
+
+    font-size: 13px;
+
+}
+
+
+.footer-column a:hover {
+
+    color: white;
+
+}
+
+
+.footer-bottom {
+
+    max-width: 1200px;
+
+    margin:
+        55px auto 0;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.1);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #819187;
+
+    font-size: 11px;
+
+}
+
+
+.footer-legal {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.footer-legal a {
+
+    color: #819187;
+
+    text-decoration: none;
+
+}
+
+
+/* =====================================================
+   WHATSAPP FLOTANTE
+===================================================== */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    width: 60px;
+
+    height: 60px;
+
+    background: #25D366;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 29px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.20);
+
+    z-index: 900;
+
+    animation:
+        whatsappPulse 2.2s infinite;
+
+}
+
+
+@keyframes whatsappPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0 rgba(37,211,102,0.45);
+
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 13px rgba(37,211,102,0);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0 rgba(37,211,102,0);
+
+    }
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(5,25,14,0.72);
+
+    z-index: 2000;
+
+}
+
+
+.modal.active {
+
+    display: flex;
+
+}
+
+
+.modal-content {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+}
+
+
+.modal-close {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 17px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+}
+
+
+.modal-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.modal-content h2 {
+
+    font-family: "Nunito", sans-serif;
+
+    color: var(--green-dark);
+
+}
+
+
+.modal-content p {
+
+    color: var(--gray);
+
+    margin:
+        15px 0 25px;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+
+    --cream: #101b14;
+
+    --white: #16251b;
+
+    --text: #eef5ef;
+
+    --gray: #b4c0b7;
+
+}
+
+
+body.dark-mode .header {
+
+    background:
+        rgba(16,27,20,0.95);
+
+}
+
+
+body.dark-mode .logo {
+
+    color: white;
+
+}
+
+
+body.dark-mode .nav-menu a {
+
+    color: #d3ded5;
+
+}
+
+
+body.dark-mode .theme-button {
+
+    background: #243b2b;
+
+}
+
+
+body.dark-mode .hero {
+
+    background:
+        linear-gradient(
+            135deg,
+            #122319,
+            #0d1811
+        );
+
+}
+
+
+body.dark-mode .hero h1,
+body.dark-mode .section-heading h2,
+body.dark-mode .contact-form-container h2 {
+
+    color: #f1f7f2;
+
+}
+
+
+body.dark-mode .btn-outline {
+
+    background: #16251b;
+
+    color: white;
+
+    border-color: #405248;
+
+}
+
+
+body.dark-mode .benefits {
+
+    background: #111d15;
+
+}
+
+
+body.dark-mode .benefit-card,
+body.dark-mode .service-card,
+body.dark-mode .testimonial-card {
+
+    background: #16251b;
+
+    border-color: #2a3d30;
+
+}
+
+
+body.dark-mode .how-it-works,
+body.dark-mode .contact-form-section {
+
+    background: #111d15;
+
+}
+
+
+body.dark-mode .contact-form {
+
+    background: #16251b;
+
+}
+
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+
+    background: #0e1912;
+
+    color: white;
+
+    border-color: #344b3b;
+
+}
+
+
+body.dark-mode .modal-content {
+
+    background: #16251b;
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .nav-menu {
+
+        gap: 16px;
+
+    }
+
+    .header-whatsapp {
+
+        padding:
+            9px 12px;
+
+    }
+
+    .hero-container {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .hero-content {
+
+        text-align: center;
+
+    }
+
+    .hero-description {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+    .hero-buttons,
+    .hero-trust {
+
+        justify-content: center;
+
+    }
+
+    .hero-visual {
+
+        max-width: 650px;
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+    .benefits-grid,
+    .services-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .footer-container {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .navbar {
+
+        padding:
+            13px 18px;
+
+    }
+
+    .nav-menu {
+
+        position: absolute;
+
+        top: 67px;
+
+        left: 0;
+
+        right: 0;
+
+        background: white;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 22px;
+
+        gap: 20px;
+
+        box-shadow:
+            0 15px 30px rgba(0,0,0,0.10);
+
+    }
+
+    .nav-menu.active {
+
+        display: flex;
+
+    }
+
+    .menu-toggle {
+
+        display: block;
+
+        margin-left: auto;
+
+    }
+
+    .header-whatsapp {
+
+        display: none;
+
+    }
+
+    .hero {
+
+        padding-top: 120px;
+
+    }
+
+    .hero h1 {
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+    .hero-visual {
+
+        min-height: 400px;
+
+    }
+
+    .hero-image {
+
+        height: 390px;
+
+    }
+
+    .profit-card {
+
+        right: 10px;
+
+        top: 20px;
+
+    }
+
+    .tech-card {
+
+        right: 10px;
+
+        bottom: 20px;
+
+    }
+
+    .impact-container {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .steps {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 35px;
+
+    }
+
+    .step-line {
+
+        display: none;
+
+    }
+
+    .testimonials-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .contact-form-container {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 35px;
+
+    }
+
+    .footer-container {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 35px;
+
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .theme-button {
+
+        display: none;
+
+    }
+
+    .hero {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 40px;
+
+    }
+
+    .hero-description {
+
+        font-size: 15px;
+
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+    }
+
+    .hero-buttons .btn {
+
+        width: 100%;
+
+    }
+
+    .hero-visual {
+
+        min-height: 350px;
+
+    }
+
+    .hero-image {
+
+        height: 350px;
+
+    }
+
+    .image-content {
+
+        left: 25px;
+
+        bottom: 30px;
+
+    }
+
+    .farmer-emoji {
+
+        font-size: 70px;
+
+    }
+
+    .image-content p {
+
+        font-size: 23px;
+
+    }
+
+    .benefits-grid,
+    .services-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .section {
+
+        padding-top: 75px;
+
+        padding-bottom: 75px;
+
+    }
+
+    .section-heading h2 {
+
+        font-size: 34px;
+
+    }
+
+    .footer-container {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .footer-legal {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+    .floating-whatsapp {
+
+        width: 55px;
+
+        height: 55px;
+
+        right: 16px;
+
+        bottom: 16px;
+
+    }
+
+}
