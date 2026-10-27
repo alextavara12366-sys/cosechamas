@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CosechaMas | Asesoría Agrícola 2.0</title>
+  <meta name="description" content="CosechaMas brinda asesoría técnica agrícola y estrategia comercial para pequeños y medianos productores del Perú. Solicita tu diagnóstico gratuito por WhatsApp.">
+  <meta name="theme-color" content="#f7f9f4">
+
+  <!-- CAMBIAR: dominio real cuando la página esté publicada -->
+  <link rel="canonical" href="https://www.cosechamas.pe/">
+
+  <!-- Vista previa al compartir el enlace por WhatsApp / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="CosechaMas">
+  <meta property="og:title" content="CosechaMas | Produce más y vende mejor">
+  <meta property="og:description" content="Asesoría técnica agrícola y estrategia comercial para productores del Perú. Diagnóstico gratuito por WhatsApp.">
+  <meta property="og:url" content="https://www.cosechamas.pe/">
+  <!-- CAMBIAR: idealmente una imagen propia de 1200x630 px subida al mismo sitio -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Ícono de la pestaña -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+
+  <!-- Aplica el tema guardado antes de pintar la página (evita el destello claro) -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("cosechamas-theme"); } catch (e) {}
+      if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+      if (t === "dark") document.documentElement.classList.add("dark-mode");
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <!-- Datos estructurados para Google (CAMBIAR los datos marcados) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CosechaMas",
+    "description": "Asesoría técnica agrícola y estrategia comercial para productores del Perú.",
+    "url": "https://www.cosechamas.pe/",
+    "telephone": "+51999999999",
+    "email": "contacto@cosechamas.pe",
+    "areaServed": { "@type": "Country", "name": "Perú" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Trujillo", "addressRegion": "La Libertad", "addressCountry": "PE" },
+    "knowsAbout": ["asesoría agrícola", "manejo de plagas", "fertilización", "riego", "comercialización agrícola"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="CosechaMas, inicio">
+        <span class="brand-mark" aria-hidden="true">🌱</span>
+        <span><strong>CosechaMas</strong><small>Asesoría Agrícola 2.0</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#cultivos">Cultivos</a>
+        <a href="#como-funciona">¿Cómo funciona?</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#diagnostico">Diagnóstico</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span class="theme-label">Modo oscuro</span>
+        </button>
+        <a class="button button-small button-primary whatsapp-link" data-msg="Hola, quiero información sobre CosechaMas." data-track="header" href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">Hablar con un asesor</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- INICIO -->
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Agricultura con mejores decisiones</p>
+          <h1>Produce más en tu <span>chacra</span>. Vende a mejor precio en el mercado.</h1>
+          <p class="hero-description">Asesoría técnica agrícola y estrategia comercial impulsada por tecnología 2.0. Acompañamos a los pequeños y medianos productores del Perú a reducir costos, proteger sus cultivos y mejorar sus ganancias.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#diagnostico">Solicitar diagnóstico gratuito</a>
+            <a class="button button-secondary" href="#servicios">Ver nuestros servicios</a>
+          </div>
+          <p class="hero-note"><span class="note-icon" aria-hidden="true">✓</span> Atención personalizada por WhatsApp y asesoría técnica.</p>
+        </div>
+        <div class="hero-visual">
+          <!-- RECOMENDADO: descargar la imagen, convertirla a .webp y usar una ruta local (ej. img/hero.webp) -->
+          <img class="hero-image"
+               src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=75"
+               srcset="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=70 600w,
+                       https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=75 1000w"
+               sizes="(max-width: 720px) 100vw, 50vw"
+               width="1000" height="667"
+               alt="Campo de cultivo verde y productivo"
+               fetchpriority="high">
+          <div class="floating-card growth-card">
+            <span class="floating-icon" aria-hidden="true">↗</span>
+            <div><strong>Tu cultivo, mejor planificado</strong><small>Decisiones técnicas y comerciales</small></div>
+          </div>
+          <div class="floating-card field-card">
+            <span class="field-dot" aria-hidden="true"></span>
+            <div><strong>En campo y digital</strong><small>Asesoría para productores del Perú</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACTO -->
+    <section class="impact-section section-compact" aria-label="Beneficios destacados">
+      <div class="container impact-grid">
+        <article class="impact-card card"><strong>+30%</strong><p>Meta de mejora del rendimiento según cultivo y manejo*</p></article>
+        <article class="impact-card card"><strong>100%</strong><p>Asesoría personalizada en campo y por WhatsApp</p></article>
+        <article class="impact-card card"><strong>Más mercado</strong><p>Orientación para conectar con compradores y buscar mejores precios</p></article>
+      </div>
+      <p class="container disclaimer">*Los resultados varían según el cultivo, la zona, las condiciones y la aplicación de las recomendaciones.</p>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">¿Por qué CosechaMas?</p>
+          <h2>Innovación y conocimiento al servicio de tu tierra</h2>
+          <p class="section-intro">Combina experiencia técnica, información útil y acompañamiento para tomar mejores decisiones durante tu campaña.</p>
+        </div>
+        <div class="card-grid three-columns">
+          <article class="feature-card card">
+            <span class="card-icon" aria-hidden="true">🌿</span>
+            <h3>Protección y manejo técnico 2.0</h3>
+            <p>Planifica el manejo de plagas, enfermedades, fertilización y riego para reducir desperdicios y cuidar tu cultivo.</p>
+          </article>
+          <article class="feature-card card">
+            <span class="card-icon" aria-hidden="true">📈</span>
+            <h3>Mejor control de costos</h3>
+            <p>Identifica tus costos de producción y evalúa alternativas comerciales que puedan mejorar tu margen de ganancia.</p>
+          </article>
+          <article class="feature-card card">
+            <span class="card-icon" aria-hidden="true">📱</span>
+            <h3>Respuesta desde tu móvil</h3>
+            <p>Comparte fotografías e información de tu cultivo por WhatsApp para coordinar la orientación de un especialista.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section section-tinted" id="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Nuestros servicios</p>
+          <h2>Soluciones para cada etapa de tu campaña</h2>
+          <p class="section-intro">Un acompañamiento práctico para producir con más información y comercializar con una mejor estrategia.</p>
+        </div>
+        <div class="card-grid three-columns">
+          <article class="service-card card">
+            <span class="service-number">01</span>
+            <h3>Asesoría técnica especializada</h3>
+            <ul>
+              <li>Análisis de suelo y orientación de fertilización.</li>
+              <li>Identificación y manejo de plagas y enfermedades.</li>
+              <li>Uso eficiente del agua y planificación del riego.</li>
+              <li>Asesoría en campo y por canales digitales.</li>
+            </ul>
+          </article>
+          <article class="service-card card">
+            <span class="service-number">02</span>
+            <h3>Estrategia y gestión comercial</h3>
+            <ul>
+              <li>Orientación para consultar precios de mercado.</li>
+              <li>Evaluación de canales de venta y compradores.</li>
+              <li>Preparación para negociar condiciones comerciales.</li>
+              <li>Orientación inicial sobre certificaciones aplicables.</li>
+            </ul>
+          </article>
+          <article class="service-card card">
+            <span class="service-number">03</span>
+            <h3>Herramientas tecnológicas 2.0</h3>
+            <ul>
+              <li>Calendario agrícola adaptado a la zona y al cultivo.</li>
+              <li>Seguimiento digital de labores y recomendaciones.</li>
+              <li>Orientación sobre sensores y monitoreo disponibles.</li>
+              <li>Registro para comparar avances de campaña.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CULTIVOS (NUEVO) -->
+    <section class="section" id="cultivos">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Cultivos que atendemos</p>
+          <h2>Experiencia en los cultivos más importantes del Perú</h2>
+          <p class="section-intro">Si tu cultivo no aparece en la lista, escríbenos igual: evaluamos cada caso.</p>
+        </div>
+        <ul class="crop-grid" role="list">
+          <li class="crop-chip"><span aria-hidden="true">🥑</span>Palta</li>
+          <li class="crop-chip"><span aria-hidden="true">🥔</span>Papa</li>
+          <li class="crop-chip"><span aria-hidden="true">☕</span>Café</li>
+          <li class="crop-chip"><span aria-hidden="true">🍫</span>Cacao</li>
+          <li class="crop-chip"><span aria-hidden="true">🫐</span>Arándano</li>
+          <li class="crop-chip"><span aria-hidden="true">🌽</span>Maíz</li>
+          <li class="crop-chip"><span aria-hidden="true">🍚</span>Arroz</li>
+          <li class="crop-chip"><span aria-hidden="true">🫘</span>Menestras</li>
+          <li class="crop-chip"><span aria-hidden="true">🍇</span>Uva</li>
+          <li class="crop-chip"><span aria-hidden="true">🌾</span>Quinua</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="section section-tinted" id="como-funciona">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Un proceso sencillo</p>
+          <h2>¿Cómo funciona?</h2>
+        </div>
+        <ol class="steps-grid" role="list">
+          <li class="step-card card">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Contáctanos</h3>
+            <p>Llena el formulario de diagnóstico o escríbenos por WhatsApp: qué cultivas, dónde está tu parcela y qué necesitas mejorar.</p>
+          </li>
+          <li class="step-card card">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Recibe un diagnóstico</h3>
+            <p>Coordinamos una evaluación y proponemos un plan técnico o comercial acorde con tu situación.</p>
+          </li>
+          <li class="step-card card">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Mejora tu campaña</h3>
+            <p>Aplica las recomendaciones, registra tus resultados y ajusta las decisiones con acompañamiento.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- HISTORIAS -->
+    <section class="section" id="historias">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Historias de éxito</p>
+          <h2>La asesoría empieza por escuchar al productor</h2>
+          <p class="section-intro">Estos espacios están preparados para incorporar testimonios reales y autorizados de clientes.</p>
+        </div>
+        <div class="card-grid two-columns">
+          <figure class="testimonial-card card">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <blockquote><p>Con una evaluación del cultivo y una estrategia comercial clara, pude entender mejor qué aspectos debía corregir en mi campaña.</p></blockquote>
+            <figcaption class="testimonial-author"><span class="avatar" aria-hidden="true">RM</span><span><strong>Productor de palta</strong><small>La Libertad · Testimonio de ejemplo</small></span></figcaption>
+          </figure>
+          <figure class="testimonial-card card">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <blockquote><p>Poder consultar y compartir fotografías desde el celular hace más sencillo coordinar la orientación que necesito.</p></blockquote>
+            <figcaption class="testimonial-author"><span class="avatar" aria-hidden="true">CS</span><span><strong>Productora agrícola</strong><small>Junín · Testimonio de ejemplo</small></span></figcaption>
+          </figure>
+        </div>
+        <p class="disclaimer">Los testimonios anteriores son textos de muestra. Sustitúyelos por experiencias reales con autorización antes de presentar la página como sitio comercial.</p>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (NUEVO) -->
+    <section class="section section-tinted" id="preguntas">
+      <div class="container narrow">
+        <div class="section-heading">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2>Resolvemos tus dudas</h2>
+        </div>
+        <!-- CAMBIAR: ajustar las respuestas a las condiciones reales del servicio -->
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>¿El diagnóstico inicial tiene costo?</summary>
+            <p>No. La primera evaluación por WhatsApp es gratuita. Si necesitas una visita a campo o un plan de seguimiento, te enviamos una cotización antes de empezar.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Visitan la chacra o todo es por WhatsApp?</summary>
+            <p>Trabajamos de las dos formas. Muchas consultas se resuelven con fotos y videos; cuando el caso lo necesita, coordinamos una visita técnica.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿En qué zonas atienden?</summary>
+            <p>Brindamos asesoría digital a productores de Costa, Sierra y Selva. Las visitas presenciales se coordinan según la disponibilidad en tu localidad.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cuánto tiempo demora la respuesta?</summary>
+            <p>Respondemos los mensajes en horario de atención y coordinamos el diagnóstico en los días siguientes, según la complejidad del caso.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Qué información debo tener lista?</summary>
+            <p>Tu cultivo, la ubicación y el tamaño aproximado de la parcela, la etapa del cultivo y fotos claras de hojas, frutos o del problema que observas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE DIAGNÓSTICO (NUEVO) -->
+    <section class="section" id="diagnostico">
+      <div class="container diagnostic-grid">
+        <div class="diagnostic-copy">
+          <p class="eyebrow">Diagnóstico gratuito</p>
+          <h2>Cuéntanos sobre tu cultivo</h2>
+          <p class="section-intro">Completa estos datos y se abrirá WhatsApp con tu mensaje ya escrito. Solo tienes que enviarlo y adjuntar fotos de tu cultivo.</p>
+          <ul class="check-list">
+            <li>Respuesta de un asesor especializado</li>
+            <li>Sin compromiso de contratación</li>
+            <li>Puedes enviar fotos y videos por WhatsApp</li>
+          </ul>
+        </div>
+
+        <form class="diagnostic-form card" id="diagnosticForm" novalidate>
+          <div class="form-row">
+            <label for="fNombre">Nombre <span aria-hidden="true">*</span></label>
+            <input id="fNombre" name="nombre" type="text" autocomplete="name" required maxlength="80">
+          </div>
+          <div class="form-row two">
+            <div>
+              <label for="fRegion">Región <span aria-hidden="true">*</span></label>
+              <select id="fRegion" name="region" required>
+                <option value="">Selecciona…</option>
+                <option>Amazonas</option><option>Áncash</option><option>Apurímac</option><option>Arequipa</option>
+                <option>Ayacucho</option><option>Cajamarca</option><option>Callao</option><option>Cusco</option>
+                <option>Huancavelica</option><option>Huánuco</option><option>Ica</option><option>Junín</option>
+                <option>La Libertad</option><option>Lambayeque</option><option>Lima</option><option>Loreto</option>
+                <option>Madre de Dios</option><option>Moquegua</option><option>Pasco</option><option>Piura</option>
+                <option>Puno</option><option>San Martín</option><option>Tacna</option><option>Tumbes</option><option>Ucayali</option>
+              </select>
+            </div>
+            <div>
+              <label for="fCultivo">Cultivo <span aria-hidden="true">*</span></label>
+              <input id="fCultivo" name="cultivo" type="text" list="listaCultivos" required maxlength="60" placeholder="Ej. palta">
+              <datalist id="listaCultivos">
+                <option value="Palta"><option value="Papa"><option value="Café"><option value="Cacao">
+                <option value="Arándano"><option value="Maíz"><option value="Arroz"><option value="Uva"><option value="Quinua">
+              </datalist>
+            </div>
+          </div>
+          <div class="form-row two">
+            <div>
+              <label for="fArea">Área aproximada (ha)</label>
+              <input id="fArea" name="area" type="number" inputmode="decimal" min="0" step="0.1" placeholder="Ej. 2.5">
+            </div>
+            <div>
+              <label for="fNecesidad">Necesito ayuda con</label>
+              <select id="fNecesidad" name="necesidad">
+                <option>Plagas o enfermedades</option>
+                <option>Fertilización y suelo</option>
+                <option>Riego</option>
+                <option>Costos de producción</option>
+                <option>Venta y precios</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="fDetalle">Describe brevemente lo que observas</label>
+            <textarea id="fDetalle" name="detalle" rows="3" maxlength="400" placeholder="Ej. Las hojas tienen manchas amarillas desde hace dos semanas."></textarea>
+          </div>
+          <div class="form-row consent">
+            <input id="fConsent" name="consentimiento" type="checkbox" required>
+            <label for="fConsent">Acepto que CosechaMas use estos datos solo para responder mi consulta, según la <a href="#privacidad">política de privacidad</a>. <span aria-hidden="true">*</span></label>
+          </div>
+          <p class="form-error" id="formError" role="alert" hidden></p>
+          <button class="button button-primary button-block" type="submit">Enviar por WhatsApp</button>
+          <p class="form-hint">* Campos obligatorios</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- LLAMADO FINAL -->
+    <section class="final-cta" id="contacto">
+      <div class="container cta-panel">
+        <div class="cta-copy">
+          <p class="eyebrow">Tu próxima campaña empieza aquí</p>
+          <h2>¿Listo para llevar tu producción agrícola al siguiente nivel?</h2>
+          <p>Conversemos sobre tus cultivos, tus objetivos y cómo podemos ayudarte a tomar mejores decisiones en el campo y el mercado.</p>
+        </div>
+        <a class="button button-light whatsapp-link" data-msg="Hola, quiero hablar con un asesor de CosechaMas." data-track="cta-final" href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">Hablar con un asesor <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- PRIVACIDAD (NUEVO) -->
+    <section class="section-compact" id="privacidad">
+      <div class="container narrow">
+        <details class="privacy-box">
+          <summary>Política de privacidad y protección de datos personales</summary>
+          <!-- CAMBIAR: completar con razón social, RUC y dirección reales; revisar con un asesor legal -->
+          <p>En cumplimiento de la Ley N.° 29733, Ley de Protección de Datos Personales, y su reglamento, CosechaMas [razón social, RUC] informa que los datos que nos envías (nombre, región, cultivo y detalles de tu consulta) se usan únicamente para responder tu solicitud de asesoría y coordinar el servicio.</p>
+          <p>No vendemos ni compartimos tus datos con terceros sin tu autorización. Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición escribiendo a <a href="mailto:contacto@cosechamas.pe">contacto@cosechamas.pe</a>.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand footer-logo" href="#inicio"><span class="brand-mark" aria-hidden="true">🌱</span><span><strong>CosechaMas</strong><small>Asesoría Agrícola 2.0</small></span></a>
+        <p>Acompañamos a productores peruanos con asesoría técnica, herramientas digitales y orientación comercial para impulsar campañas más productivas.</p>
+      </div>
+      <nav class="footer-column" aria-label="Navegación del pie de página">
+        <h3>Navegación</h3>
+        <a href="#servicios">Servicios</a>
+        <a href="#cultivos">Cultivos</a>
+        <a href="#como-funciona">¿Cómo funciona?</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a href="#diagnostico">Diagnóstico gratuito</a>
+      </nav>
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <a class="whatsapp-link" data-msg="Hola, quiero información sobre CosechaMas." data-track="footer" href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">WhatsApp: <span class="whatsapp-display">+51 999 999 999</span></a>
+        <a href="mailto:contacto@cosechamas.pe">contacto@cosechamas.pe</a>
+        <p>Lunes a sábado, 8:00 a. m. – 6:00 p. m.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Zonas de atención</h3>
+        <p>Costa, Sierra y Selva del Perú</p>
+        <p>Lima · Trujillo · Arequipa</p>
+        <!-- CAMBIAR: enlazar al Libro de Reclamaciones virtual real -->
+        <a class="complaints-link" href="#" rel="nofollow">📕 Libro de Reclamaciones</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="currentYear"></span> CosechaMas. Todos los derechos reservados.</p>
+      <p><a href="#privacidad">Privacidad</a> · <a href="#inicio">Volver al inicio ↑</a></p>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp whatsapp-link" data-msg="Hola, quiero información de CosechaMas." data-track="flotante" href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer" aria-label="Contactar con CosechaMas por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 11.5a7.5 7.5 0 0 1-11.2 6.5L4 19l1.1-4.1A7.5 7.5 0 1 1 20 11.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 9.5c.4 2 2 3.6 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+</body>
+</html>
