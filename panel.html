@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi panel | CosechaMas</title>
+  <meta name="theme-color" content="#f7f9f4">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <script>
+    (function () { var t = null; try { t = localStorage.getItem("cosechamas-theme"); } catch (e) {}
+      if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+      if (t === "dark") document.documentElement.classList.add("dark-mode"); })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="comun.js" defer></script>
+  <script src="cultivos.js" defer></script>
+  <script src="calculo.js" defer></script>
+  <script src="panel.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <p class="demo-note" data-demo-note hidden>Versión de demostración: las cuentas y los informes se guardan solo en este navegador.</p>
+
+  <header class="site-header app-header">
+    <div class="container header-inner">
+      <a class="brand" href="panel.html" aria-label="CosechaMas, mi panel">
+        <span class="brand-mark" aria-hidden="true">🌱</span>
+        <span><strong>CosechaMas</strong><small>Plataforma del productor</small></span>
+      </a>
+      <nav class="app-nav" aria-label="Navegación de la plataforma">
+        <a href="#servicios" aria-current="page">Servicios</a>
+        <a href="#nuevo-informe">Nuevo informe</a>
+        <a href="#mis-informes">Mis informes</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false"><span id="themeIcon" aria-hidden="true">🌙</span><span class="theme-label">Modo oscuro</span></button>
+        <div class="user-menu-wrap">
+          <button class="user-button" id="userMenuToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
+            <span class="user-avatar" id="userInitials" aria-hidden="true">?</span><span class="user-name" data-user-name></span>
+          </button>
+          <div class="user-menu" id="userMenu" hidden>
+            <p id="userContact"></p>
+            <a href="#mis-informes">Mis informes</a>
+            <a href="index.html">Página principal</a>
+            <button type="button" data-logout>Cerrar sesión</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="app-main">
+    <div class="container">
+      <div class="welcome">
+        <div>
+          <p class="eyebrow">Mi panel</p>
+          <h1>Hola, <span data-user-name></span> 👋</h1>
+          <p>Elige un servicio para comenzar. Tus informes quedan guardados en esta cuenta.</p>
+        </div>
+        <span class="badge" id="planBadge">Plan Productor</span>
+      </div>
+
+      <!-- SERVICIOS -->
+      <section class="panel-section" id="servicios" aria-labelledby="tServicios">
+        <h2 id="tServicios">Servicios de CosechaMas</h2>
+        <p class="section-intro">Herramientas para planificar tu campaña con información técnica y económica.</p>
+        <div class="service-tiles">
+          <article class="service-tile card featured">
+            <span class="badge">Disponible</span>
+            <h3>Informe de costos de producción</h3>
+            <p>Responde un breve cuestionario y recibe un informe completo de tu proyecto:</p>
+            <ul>
+              <li>Ficha técnica del cultivo</li>
+              <li>Costo de producción detallado y resumen de costos</li>
+              <li>Flujo de caja, punto de equilibrio y sensibilidad</li>
+              <li>Recomendaciones agronómicas y financieras</li>
+            </ul>
+            <a class="button button-primary" href="#nuevo-informe" data-start>Generar informe</a>
+          </article>
+          <article class="service-tile card soon">
+            <span class="badge badge-muted">Próximamente</span>
+            <h3>Asesoría técnica especializada</h3>
+            <p>Diagnóstico de plagas, fertilización y riego con un especialista.</p>
+            <a class="button button-secondary whatsapp-panel" href="https://wa.me/51999999999?text=Hola%2C%20quiero%20asesor%C3%ADa%20t%C3%A9cnica%20de%20CosechaMas." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          </article>
+          <article class="service-tile card soon">
+            <span class="badge badge-muted">Próximamente</span>
+            <h3>Estrategia comercial</h3>
+            <p>Precios de mercado, canales de venta y preparación para negociar.</p>
+            <a class="button button-secondary whatsapp-panel" href="https://wa.me/51999999999?text=Hola%2C%20quiero%20asesor%C3%ADa%20comercial%20de%20CosechaMas." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- NUEVO INFORME -->
+      <section class="panel-section" id="nuevo-informe" aria-labelledby="tNuevo">
+        <h2 id="tNuevo">Nuevo informe de costos</h2>
+        <p class="section-intro">Tres pasos: elige tu cultivo, revisa su ficha técnica e ingresa los datos de tu proyecto.</p>
+
+        <div class="wizard card">
+          <ol class="stepper" id="stepper">
+            <li data-step="1" aria-current="step">Cultivo</li>
+            <li data-step="2">Ficha técnica</li>
+            <li data-step="3">Parámetros</li>
+            <li data-step="4">Informe</li>
+          </ol>
+
+          <!-- PASO 1 -->
+          <form class="wizard-step" id="paso1" data-step="1" novalidate>
+            <h2>¿Qué deseas sembrar?</h2>
+            <p class="section-intro">Selecciona el cultivo, la variedad y el sistema de producción.</p>
+            <fieldset class="question"><legend>1. Cultivo</legend><div class="choice-grid" id="optCultivo"></div></fieldset>
+            <fieldset class="question"><legend>2. Variedad <span id="hintVariedad"></span></legend><div class="choice-grid" id="optVariedad"></div></fieldset>
+            <fieldset class="question"><legend>3. Sistema de producción <span id="hintSistema"></span></legend><div class="choice-grid" id="optSistema"></div></fieldset>
+            <p class="alert" id="err1" role="alert" hidden></p>
+            <div class="wizard-actions"><span class="spacer"></span><button class="button button-primary" type="submit">Ver ficha técnica →</button></div>
+          </form>
+
+          <!-- PASO 2 -->
+          <div class="wizard-step" id="paso2" data-step="2" hidden>
+            <h2 id="tituloFicha">Ficha técnica</h2>
+            <p class="section-intro">Condiciones agronómicas de referencia para este cultivo. Verifica que tu zona cumpla con ellas antes de continuar.</p>
+            <div class="table-wrap"><table class="data-table" id="tablaFicha"><caption class="sr-only">Ficha técnica del cultivo</caption><thead><tr><th scope="col">Concepto</th><th scope="col">Valor</th></tr></thead><tbody></tbody></table></div>
+            <div class="wizard-actions">
+              <button class="button button-secondary" type="button" data-go="1">← Cambiar cultivo</button>
+              <button class="button button-primary" type="button" data-go="3">Continuar con los parámetros →</button>
+            </div>
+          </div>
+
+          <!-- PASO 3 -->
+          <form class="wizard-step" id="paso3" data-step="3" hidden novalidate>
+            <h2>Parámetros de tu proyecto</h2>
+            <p class="section-intro">Los valores sugeridos son referenciales para el cultivo elegido; ajústalos a tu realidad.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="pRegion">Región donde sembrarás</label>
+                <select id="pRegion" name="region" required><option value="">Selecciona…</option></select>
+              </div>
+              <div class="field">
+                <label for="pArea">Área a sembrar</label>
+                <div class="input-group"><input id="pArea" name="area" type="number" min="0.1" max="1000" step="0.1" inputmode="decimal" required><span class="input-suffix">ha</span></div>
+              </div>
+              <div class="field">
+                <label for="pRend">Rendimiento deseado</label>
+                <div class="input-group"><input id="pRend" name="rendimiento" type="number" min="1" step="100" inputmode="numeric" required><span class="input-suffix">kg/ha</span></div>
+              </div>
+              <div class="field">
+                <label for="pMerma">Merma esperada</label>
+                <div class="input-group"><input id="pMerma" name="merma" type="number" min="0" max="90" step="0.5" inputmode="decimal" required><span class="input-suffix">%</span></div>
+                <small>Pérdida post-cosecha o por calidad.</small>
+              </div>
+              <div class="field">
+                <label for="pPrecio">Precio esperado por kg</label>
+                <div class="input-group"><input id="pPrecio" name="precio" type="number" min="0.01" step="0.01" inputmode="decimal" required><span class="input-suffix">S/ / kg</span></div>
+                <small>Precio en chacra.</small>
+              </div>
+              <div class="field">
+                <label for="pJornal">Precio promedio del jornal</label>
+                <div class="input-group"><input id="pJornal" name="jornal" type="number" min="1" step="1" inputmode="decimal" required><span class="input-suffix">S/ / día</span></div>
+              </div>
+              <div class="field">
+                <label for="pTea">Tasa de interés efectiva anual (TEA)</label>
+                <div class="input-group"><input id="pTea" name="tea" type="number" min="0" max="200" step="0.1" inputmode="decimal" required><span class="input-suffix">%</span></div>
+              </div>
+              <div class="field">
+                <label for="pMeses">Duración de la campaña</label>
+                <div class="input-group"><input id="pMeses" name="meses" type="number" min="1" max="24" step="1" inputmode="numeric" required><span class="input-suffix">meses</span></div>
+              </div>
+              <div class="field">
+                <label for="pTasa">Tasa de interés de la campaña (prorrateada)</label>
+                <div class="input-group"><input id="pTasa" type="text" readonly tabindex="-1" aria-describedby="tasaAyuda"><span class="input-suffix">%</span></div>
+                <small id="tasaAyuda">Se calcula sola: (1 + TEA)<sup>meses/12</sup> − 1.</small>
+              </div>
+            </div>
+            <div class="calc-box" aria-live="polite">
+              <div><span>Rendimiento efectivo</span><output id="oRendEf">—</output></div>
+              <div><span>Producción comercializable</span><output id="oProd">—</output></div>
+              <div><span>Costo total estimado</span><output id="oCosto">—</output></div>
+            </div>
+            <p class="alert" id="err3" role="alert" hidden style="margin-top:16px"></p>
+            <div class="wizard-actions">
+              <button class="button button-secondary" type="button" data-go="2">← Volver a la ficha</button>
+              <button class="button button-primary" type="submit">Generar informe →</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- MIS INFORMES -->
+      <section class="panel-section" id="mis-informes" aria-labelledby="tMis">
+        <h2 id="tMis">Mis informes</h2>
+        <p class="section-intro">Informes que generaste con esta cuenta.</p>
+        <ul class="report-list" id="listaInformes"></ul>
+        <p class="empty" id="sinInformes" hidden>Aún no has generado informes. Empieza con el cuestionario de arriba.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+      <p>© <span id="currentYear"></span> CosechaMas. Todos los derechos reservados.</p>
+      <p><a href="index.html#privacidad">Privacidad</a> · <a href="index.html">Página principal</a></p>
+    </div>
+  </footer>
+</body>
+</html>

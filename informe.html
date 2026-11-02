@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informe de costos | CosechaMas</title>
+  <meta name="theme-color" content="#f7f9f4">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <script>
+    (function () { var t = null; try { t = localStorage.getItem("cosechamas-theme"); } catch (e) {}
+      if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+      if (t === "dark") document.documentElement.classList.add("dark-mode"); })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="comun.js" defer></script>
+  <script src="cultivos.js" defer></script>
+  <script src="calculo.js" defer></script>
+  <script src="graficos.js" defer></script>
+  <script src="informe.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#informe">Saltar al informe</a>
+  <p class="demo-note" data-demo-note hidden>Versión de demostración: las cuentas y los informes se guardan solo en este navegador.</p>
+
+  <header class="site-header app-header">
+    <div class="container header-inner">
+      <a class="brand" href="panel.html" aria-label="CosechaMas, mi panel">
+        <span class="brand-mark" aria-hidden="true">🌱</span>
+        <span><strong>CosechaMas</strong><small>Plataforma del productor</small></span>
+      </a>
+      <nav class="app-nav" aria-label="Navegación de la plataforma">
+        <a href="panel.html#servicios">Servicios</a>
+        <a href="panel.html#nuevo-informe">Nuevo informe</a>
+        <a href="panel.html#mis-informes" aria-current="page">Mis informes</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false"><span id="themeIcon" aria-hidden="true">🌙</span><span class="theme-label">Modo oscuro</span></button>
+        <div class="user-menu-wrap">
+          <button class="user-button" id="userMenuToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
+            <span class="user-avatar" id="userInitials" aria-hidden="true">?</span><span class="user-name" data-user-name></span>
+          </button>
+          <div class="user-menu" id="userMenu" hidden>
+            <p id="userContact"></p>
+            <a href="panel.html">Mi panel</a>
+            <a href="index.html">Página principal</a>
+            <button type="button" data-logout>Cerrar sesión</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="container">
+      <div class="report-toolbar no-print">
+        <a class="button button-secondary button-small" href="panel.html#mis-informes">← Volver a mis informes</a>
+        <div class="grupo">
+          <a class="button button-secondary button-small" href="panel.html#nuevo-informe">Nuevo informe</a>
+          <button class="button button-primary button-small" type="button" id="btnImprimir">⬇ Descargar PDF / Imprimir</button>
+        </div>
+      </div>
+      <article class="doc" id="informe" aria-live="polite">
+        <p>Cargando informe…</p>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

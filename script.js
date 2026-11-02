@@ -1,4 +1,4 @@
-// CosechaMas: menú móvil, modo claro/oscuro, enlaces de WhatsApp y formulario de diagnóstico.
+// CosechaMas: menú móvil, modo claro/oscuro, enlaces de WhatsApp, formulario de diagnóstico y acceso a la plataforma.
 (() => {
   "use strict";
 
@@ -151,6 +151,18 @@
     });
   }
 
+  // ---------- Botones de cuenta: si ya inició sesión, llevar al panel ----------
+  function initCuenta() {
+    let sesion = null;
+    try { sesion = sessionStorage.getItem("cosechamas-sesion") || localStorage.getItem("cosechamas-sesion"); } catch (e) { /* nada */ }
+    if (!sesion) return;
+    const link = document.getElementById("accountLink");
+    if (link) { link.textContent = "Mi panel"; link.href = "panel.html"; }
+    const cta = document.getElementById("platformCta");
+    if (cta) { cta.textContent = "Ir a mi panel"; cta.href = "panel.html"; }
+    document.getElementById("platformLogin")?.remove();
+  }
+
   function initYear() {
     const el = document.getElementById("currentYear");
     if (el) el.textContent = new Date().getFullYear();
@@ -160,5 +172,6 @@
   initTheme();
   initMobileMenu();
   initDiagnosticForm();
+  initCuenta();
   initYear();
 })();

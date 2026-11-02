@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta | CosechaMas</title>
+  <meta name="description" content="Crea tu cuenta en CosechaMas y genera informes de costos de producción para tu cultivo.">
+  <meta name="theme-color" content="#f7f9f4">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <script>
+    (function () { var t = null; try { t = localStorage.getItem("cosechamas-theme"); } catch (e) {}
+      if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+      if (t === "dark") document.documentElement.classList.add("dark-mode"); })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="comun.js" defer></script>
+  <script src="cuenta.js" defer></script>
+</head>
+<body class="auth-body">
+  <p class="demo-note" data-demo-note hidden>Versión de demostración: las cuentas se guardan solo en este navegador.</p>
+  <div class="auth-layout">
+    <aside class="auth-aside">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">🌱</span><span><strong>CosechaMas</strong><small>Asesoría Agrícola 2.0</small></span></a>
+      <div class="aside-body">
+        <h2>Planifica tu campaña con números claros</h2>
+        <p>Crea tu cuenta y obtén en minutos un informe técnico y económico de tu cultivo.</p>
+        <ul class="auth-benefits">
+          <li><span aria-hidden="true">📋</span><div><strong>Ficha técnica del cultivo</strong><br>Temperatura, altitud, suelo, riego y fertilización.</div></li>
+          <li><span aria-hidden="true">💰</span><div><strong>Costo de producción detallado</strong><br>Mano de obra, maquinaria, insumos y costos indirectos.</div></li>
+          <li><span aria-hidden="true">📈</span><div><strong>Flujo de caja y rentabilidad</strong><br>Punto de equilibrio, relación B/C y escenarios.</div></li>
+        </ul>
+      </div>
+      <small class="foot">© <span id="currentYear"></span> CosechaMas · Perú</small>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-top">
+        <a href="index.html">← Volver al inicio</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false"><span id="themeIcon" aria-hidden="true">🌙</span><span class="theme-label">Modo oscuro</span></button>
+      </div>
+
+      <form class="auth-card card" id="registroForm" novalidate>
+        <h1>Crea tu cuenta</h1>
+        <p class="lead">Regístrate gratis para acceder a los servicios de CosechaMas.</p>
+        <p class="alert" id="formAlert" role="alert" hidden></p>
+
+        <div class="field">
+          <label for="rNombre">Nombre completo</label>
+          <input id="rNombre" name="nombre" type="text" autocomplete="name" required minlength="3" maxlength="80">
+        </div>
+        <div class="field">
+          <label for="rContacto">Correo electrónico o número de celular</label>
+          <input id="rContacto" name="contacto" type="text" autocomplete="username" required inputmode="email" placeholder="tucorreo@gmail.com o 987654321">
+          <small>Lo usarás para iniciar sesión.</small>
+        </div>
+        <div class="field">
+          <label for="rFecha">Fecha de nacimiento</label>
+          <input id="rFecha" name="fecha" type="date" required autocomplete="bday" min="1920-01-01">
+          <small>Debes ser mayor de 18 años.</small>
+        </div>
+        <div class="field">
+          <label for="rClave">Contraseña</label>
+          <div class="input-group">
+            <input id="rClave" name="clave" type="password" autocomplete="new-password" required minlength="8">
+            <button class="input-addon" type="button" data-toggle-pass="rClave" aria-label="Mostrar contraseña">Mostrar</button>
+          </div>
+          <div class="strength" id="strength" data-level="0" aria-hidden="true"><span></span></div>
+          <small>Mínimo 8 caracteres, con al menos una letra y un número.</small>
+        </div>
+        <div class="field">
+          <label for="rClave2">Confirmar contraseña</label>
+          <input id="rClave2" name="clave2" type="password" autocomplete="new-password" required>
+        </div>
+        <label class="check"><input id="rAcepto" type="checkbox" required> <span>Acepto los términos del servicio y la <a href="index.html#privacidad">política de privacidad</a> (Ley N.° 29733).</span></label>
+        <button class="button button-primary button-block" type="submit">Crear cuenta</button>
+        <p class="auth-switch">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

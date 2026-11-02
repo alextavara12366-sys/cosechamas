@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | CosechaMas</title>
+  <meta name="description" content="Ingresa a tu cuenta de CosechaMas.">
+  <meta name="theme-color" content="#f7f9f4">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <script>
+    (function () { var t = null; try { t = localStorage.getItem("cosechamas-theme"); } catch (e) {}
+      if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+      if (t === "dark") document.documentElement.classList.add("dark-mode"); })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="comun.js" defer></script>
+  <script src="cuenta.js" defer></script>
+</head>
+<body class="auth-body">
+  <p class="demo-note" data-demo-note hidden>Versión de demostración: las cuentas se guardan solo en este navegador.</p>
+  <div class="auth-layout">
+    <aside class="auth-aside">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">🌱</span><span><strong>CosechaMas</strong><small>Asesoría Agrícola 2.0</small></span></a>
+      <div class="aside-body">
+        <h2>Bienvenido de nuevo</h2>
+        <p>Ingresa para generar nuevos informes de costos o revisar los que ya preparaste.</p>
+        <ul class="auth-benefits">
+          <li><span aria-hidden="true">🌱</span><div><strong>Tus informes guardados</strong><br>Consulta y descarga tus informes cuando los necesites.</div></li>
+          <li><span aria-hidden="true">🧮</span><div><strong>Compara escenarios</strong><br>Cambia precio, rendimiento o jornal y genera otro informe.</div></li>
+        </ul>
+      </div>
+      <small class="foot">© <span id="currentYear"></span> CosechaMas · Perú</small>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-top">
+        <a href="index.html">← Volver al inicio</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false"><span id="themeIcon" aria-hidden="true">🌙</span><span class="theme-label">Modo oscuro</span></button>
+      </div>
+
+      <form class="auth-card card" id="loginForm" novalidate>
+        <h1>Iniciar sesión</h1>
+        <p class="lead">Ingresa con el correo o celular con el que te registraste.</p>
+        <p class="alert" id="formAlert" role="alert" hidden></p>
+
+        <div class="field">
+          <label for="lContacto">Correo electrónico o número de celular</label>
+          <input id="lContacto" name="contacto" type="text" autocomplete="username" required inputmode="email">
+        </div>
+        <div class="field">
+          <label for="lClave">Contraseña</label>
+          <div class="input-group">
+            <input id="lClave" name="clave" type="password" autocomplete="current-password" required>
+            <button class="input-addon" type="button" data-toggle-pass="lClave" aria-label="Mostrar contraseña">Mostrar</button>
+          </div>
+        </div>
+        <div class="row-between">
+          <label class="check" style="margin:0"><input id="lRecordar" type="checkbox" checked> <span>Mantener la sesión iniciada</span></label>
+          <a href="#" id="olvide" style="font-size:.9rem;font-weight:700">¿Olvidaste tu contraseña?</a>
+        </div>
+        <p class="alert alert-ok" id="olvideMsg" role="status" hidden style="margin-top:14px">Escríbenos por WhatsApp o a contacto@cosechamas.pe para restablecer tu contraseña.</p>
+        <button class="button button-primary button-block" type="submit" style="margin-top:20px">Ingresar</button>
+        <p class="auth-switch">¿Aún no tienes cuenta? <a href="registro.html">Regístrate gratis</a></p>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
